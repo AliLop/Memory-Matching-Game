@@ -1,9 +1,63 @@
-
-
-#game-board {
-    background-color: aquamarine;
+body {
+    margin: 2px 50px;
+    background-color: black;
+    /*url('../styles/images/background2.jpg') no-repeat;*/
+    background-size: cover;
+    text-align: center;
+    font-family: fantasy;
 }
 
-canvas {
-    background-color: beige;
+.head {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    color: #dddddd;
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 0px 0px 20px rgba(150, 150, 150, 1);
+    margin-top: 125px;
+}
+
+#game-board {
+    width: 600px;
+    height: 600px;
+    padding: 30px 30px;
+    margin: 0px 20px;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 20px -6px rgba(97, 89, 97, 1);
+}
+
+#score-div {
+    background-color:#dddddd; 
+    border-radius: 8px;
+    /*font-size: 20px;*/
+    font-family: Arial;
+    width: 200px;
+    padding: 5px;
+    margin-top: 250px;
+    color: #214252;
+}
+
+#start-button {
+    padding: 10px;
+    font-size: 40px;
+    border-radius: 8px;
+    margin-top: 250px;
+    margin-right: 150px;
+    margin-left: 150px;
+    background-color: transparent;
+    color: #214252;
+}
+
+.explain {
+    margin-top: 120px;
+    color: #214252;
+    font-size: 30px;
+}
+
+.game-over {
+    font-size: 50px;
+    color: red;
 }

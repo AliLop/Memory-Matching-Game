@@ -2,41 +2,32 @@ class Game {
     constructor() {
         this.cards = []; 
         this.score = 0;
-        this.pickedCards = []; 
+        //this.canUserPick = true;
+        //this.pickedPictures = [];
+        //
+        this.pickedCards = [];
         this.pairsClicked = 0; 
         this.pairsGuessed = 0;
     }
 
-   shuffleCards(cards) {
-    if (!cards) {   // if tehre is no array
-      return undefined
-    } else {
-        let len = this.cards.length;
-        while (len > 0) {
-            len--;
-            let mixed = this.cards[len];
-            let rdmInd = Math.floor(Math.random() * len);
-            this.cards[len] = this.cards[rdmInd];
-            this.cards[rdmInd] = mixed;
-        }
-      return mixed; 
-    }
-  } 
-
- 
-
   checkIfPair(card1, card2) {
     this.pairsClicked++;
-    
-    if (card1.getAttribute('data-card-name') === card2.getAttribute('data-card-name')) {
+    console.log(card1);
+    console.log(this.pairsClicked);
+
+    if (card1.name === card2.name) {
+        console.log(true);
       this.pairsGuessed++;
       return true;
     } else {
+        console.log(false)
       return false;
+
     }
   }
+
   isFinished() {
-    if (this.pairsGuessed === 0 || this.pairsGuessed < this.cards.length / 2) {
+    if (this.pairsGuessed < this.cards.length / 2) {
         return false; 
     } else {
         return true;

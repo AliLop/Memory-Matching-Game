@@ -7,26 +7,39 @@
     <link rel="stylesheet" href="styles/style.css" /> 
 </head>
 <body>
-    <div class="game-intro">
+    <div class="head">
+        <div class="game-intro">
         <!-- <img src="./images/logo.png" alt="" class="logo-img" />  -->
-        <br />
-        <button id="start-button">StartGame</button>
-        <p>Match the cards!</p>
+            <h1> <strong>MEMORY <br/> GAME </strong></h1>
+            <p class="explain">Match Heroes <br/> and Villains!</p> 
+        </div>
+    
+         <div id="game-board">
+            <div id="start">
+                
+                <button id="start-button"><strong>Start Game</strong></button>
+                
+        </div>
+            
+        <canvas id="canvas" width="600" height="600"></canvas>
+        </div>
 
+
+        <div>
+            <div id="score-div">
+                <p><strong> SCORE <br/>
+                    ✔ Pairs Guessed: <span id="pairs-guessed">0</span><br/>
+                    ❌ Pairs Clicked: <span id="pairs-clicked">0</span></strong></p>
+                <div class="time">
+                    Countdown: 00:<span id="time">59</span> 
+                </div>
+            </div>
+        </div>
     </div>
    
-    <div id="game-board">
-        <div id="score-div">
-            <p>Score: <span id="score">0</span></p>
-        </div>
-        <div class="chronometer">
-            <h3>chronometer</h3>
-        </div>
+   
 
-      <canvas id="canvas" width="600" height="600"></canvas>
-    </div>
-
-
+    <script src="js/cardsCollection.js"></script> 
     <script src="js/cards.js"></script>
     <script src="js/game.js"></script>
     <script src="js/index.js"></script>
