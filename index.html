@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorando</title>
     <link rel="stylesheet" href="styles/style.css" /> 
+    <script src="https://kit.fontawesome.com/2f1cc098b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="head">
@@ -14,24 +15,23 @@
             <p class="explain">Match Heroes <br/> and Villains!</p> 
         </div>
     
-         <div id="game-board">
-            <div id="start">
-                
-                <button id="start-button"><strong>Start Game</strong></button>
-                
-        </div>
+        <div id="game-board">
+                <div id="start">
+                    <button id="start-button"><strong> START </strong></button>
+                </div>
             
-        <canvas id="canvas" width="600" height="600"></canvas>
+            <canvas id="canvas" width="600" height="600"></canvas>
         </div>
-
 
         <div>
             <div id="score-div">
-                <p><strong> SCORE <br/>
-                    ✔ Pairs Guessed: <span id="pairs-guessed">0</span><br/>
-                    ❌ Pairs Clicked: <span id="pairs-clicked">0</span></strong></p>
+                <p class="score-title"><strong> SCORE </strong></p>
+                   <hr/> 
+                    <p class="pairs">Pairs Guessed:<br/><span id="pairs-guessed"><i class="fas fa-trophy"> </i> <strong>0 </strong>/ 16 </span><br/>
+                    Pairs Clicked:<br/><span id="pairs-clicked"><i class="fas fa-times"> </i> <strong>0</strong></span></p>
+                <hr/>
                 <div class="time">
-                    Countdown: 00:<span id="time">59</span> 
+                    <small> Countdown: </small> 00:<span id="time">59</span> 
                 </div>
             </div>
         </div>

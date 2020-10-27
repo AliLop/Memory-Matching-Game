@@ -10,6 +10,10 @@ class Cards {
          
     drawCards() {
         ctx.fillStyle = '#214252';
+         ctx.shadowColor = /*'#485563'*/ 'rgba(97, 89, 97, 1)';
+ ctx.shadowBlur = 9;
+ ctx.shadowOffsetX = 2;
+ ctx.shadowOffsetY = 3;
         ctx.fillRect(this.x, this.y, this.width, this.heigth)
         }
     
