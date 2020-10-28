@@ -14,21 +14,23 @@
             <h1> <strong>MEMORY <br/> GAME </strong></h1>
             <p class="explain">Match Heroes <br/> and Villains!</p> 
         </div>
-    
         <div id="game-board">
+                <div id="over"></div>
                 <div id="start">
                     <button id="start-button"><strong> START </strong></button>
                 </div>
             
             <canvas id="canvas" width="600" height="600"></canvas>
         </div>
-
         <div>
+            <div class="level"> 
+                <small> Level: </small> <strong><span id="level">1</span></strong>
+            </div>
             <div id="score-div">
                 <p class="score-title"><strong> SCORE </strong></p>
                    <hr/> 
-                    <p class="pairs">Pairs Guessed:<br/><span id="pairs-guessed"><i class="fas fa-trophy"> </i> <strong>0 </strong>/ 16 </span><br/>
-                    Pairs Clicked:<br/><span id="pairs-clicked"><i class="fas fa-times"> </i> <strong>0</strong></span></p>
+                    <p class="pairs">Pairs Guessed:<br/> <i class="fas fa-trophy"> </i> <span id="pairs-guessed"><strong>0 </strong> </span> / 16 <br/>
+                    Pairs Clicked:<br/> <i class="fas fa-times"> </i> <span id="pairs-clicked"><strong>0</strong></span></p>
                 <hr/>
                 <div class="time">
                     <small> Countdown: </small> 00:<span id="time">59</span> 
@@ -36,9 +38,6 @@
             </div>
         </div>
     </div>
-   
-   
-
     <script src="js/cardsCollection.js"></script> 
     <script src="js/cards.js"></script>
     <script src="js/game.js"></script>
