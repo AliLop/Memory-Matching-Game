@@ -114,7 +114,7 @@ function checkPickedCards() {
                 document.getElementById('next-level').innerHTML += 
                     `<div id="next-level"> LEVEL  <span class="number">2</span> <div>`;
                 currentLevel = 2;                            
-                clock = 3;
+                clock = 60;
             } else if (currentLevel === 2) {
                 clearInterval(intervalId);
                 document.getElementById('canvas').style.display ='none';
