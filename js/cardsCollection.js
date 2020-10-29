@@ -1,6 +1,6 @@
       
       let cardsCollection = [
-            { name: 'alien', img: '/styles/images/LevelOneCardsCollection/alien-ripley2.jpg' },
+            { name: 'alien', img: 'styles/images/LevelOneCardsCollection/alien-ripley2.jpg' },
             { name: 'darth-vader', img: 'styles/images/LevelOneCardsCollection/darth-vader.jpg' },
             { name: 'harry-potter', img: 'styles/images/LevelOneCardsCollection/harry-potter.jpg' } ,
             { name: 'power-puff', img: 'styles/images/LevelOneCardsCollection/power-puff.jpg' },
