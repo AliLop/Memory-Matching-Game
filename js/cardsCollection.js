@@ -1,22 +1,22 @@
       
       let cardsCollection = [
-            { name: 'alien', img: '../project1/styles/images/LevelOneCardsCollection/alien-ripley2.jpg' },
-            { name: 'darth-vader', img: '../project1/styles/images/LevelOneCardsCollection/darth-vader.jpg' },
-            { name: 'harry-potter', img: '../project1/styles/images/LevelOneCardsCollection/harry-potter.jpg' } ,
-            { name: 'power-puff', img: '../project1/styles/images/LevelOneCardsCollection/power-puff.jpg' },
-            { name: 'son-goku', img: '../project1/styles/images/LevelOneCardsCollection/son-goku.jpg' },
-            { name: 'wonder-woman', img: '../project1/styles/images/LevelOneCardsCollection/wonder-woman.jpg' },
-            { name: 'jocker', img: '../project1/styles/images/LevelOneCardsCollection/jocker.jpg' },
-            { name: 'labirynth', img: '../project1//styles/images/LevelOneCardsCollection/labirynth.jpg' },
+            { name: 'alien', img: '/styles/images/LevelOneCardsCollection/alien-ripley2.jpg' },
+            { name: 'darth-vader', img: 'styles/images/LevelOneCardsCollection/darth-vader.jpg' },
+            { name: 'harry-potter', img: 'styles/images/LevelOneCardsCollection/harry-potter.jpg' } ,
+            { name: 'power-puff', img: 'styles/images/LevelOneCardsCollection/power-puff.jpg' },
+            { name: 'son-goku', img: 'styles/images/LevelOneCardsCollection/son-goku.jpg' },
+            { name: 'wonder-woman', img: 'styles/images/LevelOneCardsCollection/wonder-woman.jpg' },
+            { name: 'jocker', img: 'styles/images/LevelOneCardsCollection/jocker.jpg' },
+            { name: 'labirynth', img: 'styles/images/LevelOneCardsCollection/labirynth.jpg' },
             //REPEAT
-            { name: 'alien', img: '../project1//styles/images/LevelOneCardsCollection/Valien-ripley.jpg' },
-            { name: 'darth-vader', img: '../project1//styles/images/LevelOneCardsCollection/Hdarth-vader.jpg' },
-            { name: 'harry-potter', img: '../project1//styles/images/LevelOneCardsCollection/Vharry-potter.jpg' } ,
-            { name: 'power-puff', img: '../project1//styles/images/LevelOneCardsCollection/Vpower-puff.jpg' },
-            { name: 'son-goku', img: '../project1//styles/images/LevelOneCardsCollection/Vson-goku.jpg' },
-            { name: 'wonder-woman', img: '../project1//styles/images/LevelOneCardsCollection/Vwonder-woman.jpg' },
-            { name: 'jocker', img: '../project1//styles/images/LevelOneCardsCollection/Hjocker.jpg' },
-            { name: 'labirynth', img: '../project1//styles/images/LevelOneCardsCollection/Hlabirynth.jpg' }
+            { name: 'alien', img: 'styles/images/LevelOneCardsCollection/Valien-ripley.jpg' },
+            { name: 'darth-vader', img: 'styles/images/LevelOneCardsCollection/Hdarth-vader.jpg' },
+            { name: 'harry-potter', img: 'styles/images/LevelOneCardsCollection/Vharry-potter.jpg' } ,
+            { name: 'power-puff', img: 'styles/images/LevelOneCardsCollection/Vpower-puff.jpg' },
+            { name: 'son-goku', img: 'styles/images/LevelOneCardsCollection/Vson-goku.jpg' },
+            { name: 'wonder-woman', img: 'styles/images/LevelOneCardsCollection/Vwonder-woman.jpg' },
+            { name: 'jocker', img: 'styles/images/LevelOneCardsCollection/Hjocker.jpg' },
+            { name: 'labirynth', img: 'styles/images/LevelOneCardsCollection/Hlabirynth.jpg' }
     ]
 
 
