@@ -28,16 +28,16 @@ function startGame() {
         let rndIndex = Math.floor(Math.random() * copyArray.length);
         // assign Image to card
         if(i < 5) {
-        currentGame.cards.push(new Cards((i -1) * 155, 0, copyArray[rndIndex].name, copyArray[rndIndex].img));
+        currentGame.cards.push(new Cards((i -1) * 150, 0, copyArray[rndIndex].name, copyArray[rndIndex].img));
             copyArray.splice(rndIndex, 1);
         } else if (i < 9) {
-        currentGame.cards.push(new Cards((i - 5) * 155, 155, copyArray[rndIndex].name, copyArray[rndIndex].img));
+        currentGame.cards.push(new Cards((i - 5) * 150, 150, copyArray[rndIndex].name, copyArray[rndIndex].img));
             copyArray.splice(rndIndex, 1);
         } else if (i < 13) {
-            currentGame.cards.push(new Cards((i - 9) * 155, 310, copyArray[rndIndex].name, copyArray[rndIndex].img));
+            currentGame.cards.push(new Cards((i - 9) * 150, 300, copyArray[rndIndex].name, copyArray[rndIndex].img));
             copyArray.splice(rndIndex, 1);
         } else {
-            currentGame.cards.push(new Cards((i - 13) * 155, 465, copyArray[rndIndex].name, copyArray[rndIndex].img));
+            currentGame.cards.push(new Cards((i - 13) * 150, 450, copyArray[rndIndex].name, copyArray[rndIndex].img));
             copyArray.splice(rndIndex, 1);
         }
     }
@@ -99,13 +99,22 @@ function checkPickedCards() {
             document.getElementById("level").innerHTML = `2`;
 
             if(currentLevel === 1) {
-                currentLevel = 2;
-                clock = 56;
-            } else if (currentLevel === 2) {
-                document.getElementById('canvas').style.display ='none';
-                document.getElementById('over').innerHTML += `<div id="you-won"> YOU WON! <div>`;            
                 clearInterval(intervalId);
-                currentLevel = 'finish';              
+                document.getElementById('next-level').innerHTML += 
+                    `<div id="next-level"> LEVEL  <span class="number">2</span> <div>`;
+                currentLevel = 2;                            
+                clock = 50;
+            } else if (currentLevel === 2) {
+                clearInterval(intervalId);
+                document.getElementById('canvas').style.display ='none';
+                document.getElementById('over').innerHTML += `<div id="you-won">           
+                <span id="gif"><img src="../project1/styles/images/fireworks.gif"/><span><br/>
+                YOU WON! <div>`;  
+                currentLevel = 'finish';
+                setTimeout (() => {
+                    document.getElementById('gif').innerHTML = "";
+                    reStart();  
+                }, 5000)                        
             } 
 
             if (currentLevel !== 'finish') {
@@ -113,14 +122,16 @@ function checkPickedCards() {
                 currentGame.pairsGuessed = 0;
                 document.getElementById('pairs-clicked').innerHTML = 0;
                 document.getElementById('pairs-guessed').innerHTML = 0;
-            
-                document.getElementById('canvas').style.display ='block';
-                
-                intervalId = printSeconds();
-                startGame();
-            }
-   
-        }, 500)
+
+                setTimeout (() => {
+                    document.getElementById('next-level').innerHTML = "";                   
+                    document.getElementById('canvas').style.display ='block';
+                    intervalId = printSeconds();
+                    startGame();
+                   
+                }, 3000)
+             }
+        }, 300)
     }
 }
 //TIMER = GAME OVER 
@@ -129,25 +140,23 @@ function printSeconds(){
     intervalId = setInterval(() => {
         clock -= 1;
         if (clock < 1) {
-            
             clearInterval(intervalId);
-            setTimeout(() => {
-                let overAudio = new Audio('../project1/styles/images/oldstylegamesound.mp3');
+            let overAudio = new Audio('../project1/styles/images/oldstylegamesound.mp3');
                     overAudio.play();
                 document.getElementById('canvas').style.display ='none';
                 document.getElementById('over').innerHTML += `<div id="game-over"> GAME OVER! <div>`;
-                
+            setTimeout(() => {                               
                 reStart();  
-            }) 
-        }
+            }, 3000);
+        };
         if (clock < 10) {
             return document.getElementById('time').innerHTML = `0${clock}`;
         } else { 
             return document.getElementById('time').innerHTML = `${clock}`;
-        }
+        };
     }, 1000);
     return intervalId;
-}    
+}; 
 //RESTART Level 1 & 2 = working 
 function reStart() {
     document.getElementById('start-button').innerHTML = `<strong> AGAIN? </strong>`;

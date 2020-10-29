@@ -13,7 +13,7 @@ class Cards {
         ctx.shadowBlur = 9;
         ctx.shadowOffsetX = 2;
         ctx.shadowOffsetY = 3;
-        ctx.fillRect(this.x, this.y, this.width, this.heigth)
+        ctx.fillRect(this.x, this.y, this.width, this.heigth);
     }
     picture(x, y, width, heigth) {
         let picture = new Image();

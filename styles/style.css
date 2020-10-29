@@ -15,7 +15,7 @@ h1 {
     text-align: center;
     text-shadow: 0px 0px 20px rgba(150, 150, 150, 1);
     letter-spacing: 0.1em;
-    margin-top: 125px;
+    margin-top: 60px;
 }
 .explain {
     margin-top: 120px;
@@ -28,8 +28,7 @@ h1 {
     border-radius: 8px;
     position: relative;
     bottom: -240px;
-    margin-right: 150px;
-    margin-left: 170px;
+    margin: auto;
     background-color: transparent;
     color: #214252;
     box-shadow: inset 0px 0px 20px -6px rgba(97, 89, 97, 1); 
@@ -39,9 +38,9 @@ h1 {
 #game-board {
     width: 600px;
     height: 600px;
-    padding: 30px 30px;
+    padding: 20px 20px;
     margin: 0px 20px;
-    border-radius: 60px;
+    border-radius: 40px;
     box-shadow: inset 0px 0px 20px -6px rgba(97, 89, 97, 1);
 }
 .level {
@@ -55,7 +54,6 @@ h1 {
     margin-top: 20px;
     color:#dddddd;
 }
-
 #score-div {
         font-family: fantasy;
         letter-spacing: 0.1em;
@@ -64,7 +62,7 @@ h1 {
     font-family: Arial;
     width: 180px;
     padding: 10px 5px;
-    margin-top: 160px;
+    margin-top: 150px;
     color: #214252;
 }
 .score-title {
@@ -79,7 +77,29 @@ h1 {
      margin-top: 10px;
      margin-bottom: 10px;
 }
-#game-over, #you-won {
+#next-level {
+    font-size: 50px;
+    color: #214252;
+    text-align: center;
+    letter-spacing: 0.1em;
+    position: relative;
+    top: 105px;
+}
+.number,
+#you-won {
+    font-size: 60px;
+    color: #dddddd;
+    text-shadow: 0px 0px 20px rgba(150, 150, 150, 1);
+}
+#you-won {
+   text-align: center;
+   letter-spacing: 0.1em;
+   position: relative;
+   top: 105px;
+   align-items: center;
+   margin: auto;
+}
+#game-over {
     font-size: 50px;
     color: red;
     text-align: center; 
