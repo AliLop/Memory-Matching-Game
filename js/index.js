@@ -55,11 +55,12 @@ myCanvas.addEventListener('click', e =>{
     currentGame.cards.forEach(card => {  
         if(e.layerX > card.x && e.layerX < (card.x + card.width) &&
         e.layerY > card.y && e.layerY < (card.y + card.heigth)) {
-            // Max of 2 cards at a time has a BUG
-            // If you click 2 on your image accepts it as valid 
-            if (currentGame.pickedCards.length < 2) {  
-                card.picture(card.x, card.y, card.width, card.heigth);
-                currentGame.pickedCards.push(card);
+            
+            if (currentGame.pickedCards.length < 2) { 
+                if (currentGame.pickedCards[0] !== card) {
+                    card.picture(card.x, card.y, card.width, card.heigth);
+                    currentGame.pickedCards.push(card);
+                }
             }
             checkPickedCards();
         }      
@@ -83,9 +84,16 @@ function checkPickedCards() {
                    card.drawCards(); 
                 });
                 currentGame.pickedCards = [];
-            }, 1100)   
+            }, 1000)   
         };
-        document.getElementById('pairs-clicked').innerHTML = currentGame.pairsClicked;   
+        document.getElementById('pairs-clicked').innerHTML = currentGame.pairsClicked;
+        
+        if(currentGame.penalty()) {
+                console.log(clock);
+                clock -= 5;
+                console.log(clock);
+            
+            }   
     }
 
     //WIN 

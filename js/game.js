@@ -23,4 +23,10 @@ class Game {
         return true;
     }
   }
+
+  penalty() {
+      if (this.pairsClicked % 5 === 0) {
+        return true;
+      } 
+  }
 }
