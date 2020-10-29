@@ -6,6 +6,7 @@ const myCanvas = document.getElementById('canvas');
 const ctx = myCanvas.getContext('2d');
 
 document.getElementById('canvas').style.display ='none';
+document.getElementById('penalty').style.display ='none';
 document.getElementById("start-button").onclick = () => {
     startGame();
    intervalId = printSeconds();
@@ -88,15 +89,16 @@ function checkPickedCards() {
         };
         document.getElementById('pairs-clicked').innerHTML = currentGame.pairsClicked;
         
-        if(currentGame.penalty()) {
-                console.log(clock);
-                clock -= 5;
-                console.log(clock);
-            
+        if(currentGame.penalty() && clock > 4) {
+                clock -= 3;
+                document.getElementById('penalty').style.display ='block'; 
+                setTimeout(() => {
+                    document.getElementById('penalty').style.display ='none'; 
+                }, 1000)
             }   
     }
 
-    //WIN 
+    //WIN Each LEVEL AND FINAL
     if (currentGame.isFinished()) {
         clearInterval(intervalId);
 
@@ -112,13 +114,13 @@ function checkPickedCards() {
                 document.getElementById('next-level').innerHTML += 
                     `<div id="next-level"> LEVEL  <span class="number">2</span> <div>`;
                 currentLevel = 2;                            
-                clock = 50;
+                clock = 3;
             } else if (currentLevel === 2) {
                 clearInterval(intervalId);
                 document.getElementById('canvas').style.display ='none';
-                document.getElementById('over').innerHTML += `<div id="you-won">           
+                document.getElementById('over').innerHTML = `<div id="you-won">           
                 <span id="gif"><img src="../project1/styles/images/fireworks.gif"/><span><br/>
-                YOU WON! <div>`;  
+                GEEK OF THE WEEK! <div>`;  
                 currentLevel = 'finish';
                 setTimeout (() => {
                     document.getElementById('gif').innerHTML = "";
@@ -149,10 +151,11 @@ function printSeconds(){
         clock -= 1;
         if (clock < 1) {
             clearInterval(intervalId);
+            document.getElementById('time').innerHTML = `00`;
             let overAudio = new Audio('styles/images/oldstylegamesound.mp3');
                     overAudio.play();
-                document.getElementById('canvas').style.display ='none';
-                document.getElementById('over').innerHTML += `<div id="game-over"> GAME OVER! <div>`;
+            document.getElementById('canvas').style.display ='none';
+            document.getElementById('over').innerHTML = `<div id="game-over"> GAME OVER! <div>`;
             setTimeout(() => {                               
                 reStart();  
             }, 3000);
@@ -167,6 +170,7 @@ function printSeconds(){
 }; 
 //RESTART Level 1 & 2 = working 
 function reStart() {
+    
     document.getElementById('start-button').innerHTML = `<strong> AGAIN? </strong>`;
     document.getElementById('start-button').style.display = 'block';
     currentGame.pickedCards = [];
@@ -178,7 +182,7 @@ function reStart() {
     document.getElementById("level").innerHTML = `1`;
     
     document.getElementById("start-button").onclick = () => {
-        document.getElementById('over').style.display = 'none'; 
+        document.getElementById('over').innerHTML = "";
         startGame();
         clock = 60;
         printSeconds();
