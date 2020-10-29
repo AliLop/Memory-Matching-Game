@@ -35,6 +35,11 @@ h1 {
     font-family: fantasy;
     letter-spacing: 0.1em;
 }
+#start-button:hover {
+        padding: 20px;
+        cursor: pointer;
+        box-shadow: inset 0px 0px 25px -8px rgba(97, 89, 97, 1);
+}
 #game-board {
     width: 600px;
     height: 600px;
@@ -116,5 +121,16 @@ h1 {
     -1px 1px 0 #dddddd;
 }
 
-
+#github-link {
+    text-align: right;
+    position: relative;
+    left: -30px; 
+    bottom: 35px;
+    font-size: 11px;
+    color: #214252;
+}
+#open-src {
+    color: #dddddd;
+    text-decoration: none;
+}
 
