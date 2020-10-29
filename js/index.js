@@ -71,7 +71,7 @@ function checkPickedCards() {
         const card2 = currentGame.pickedCards[1];
         if(currentGame.checkIfPair(card1, card2)) {
             document.getElementById('pairs-guessed').innerHTML = currentGame.pairsGuessed;
-            let pickedAudio = new Audio('../project1/styles/images/gamepickupobject.mp3');
+            let pickedAudio = new Audio('styles/images/gamepickupobject.mp3');
                 pickedAudio.play();
             currentGame.pickedCards = [];
             currentGame.isFinished();
@@ -91,7 +91,7 @@ function checkPickedCards() {
     if (currentGame.isFinished()) {
         clearInterval(intervalId);
 
-        let winAudio = new Audio('../project1/styles/images/cheering.mp3');
+        let winAudio = new Audio('styles/images/cheering.mp3');
         winAudio.play();
         
         setTimeout(() =>  {
@@ -141,7 +141,7 @@ function printSeconds(){
         clock -= 1;
         if (clock < 1) {
             clearInterval(intervalId);
-            let overAudio = new Audio('../project1/styles/images/oldstylegamesound.mp3');
+            let overAudio = new Audio('styles/images/oldstylegamesound.mp3');
                     overAudio.play();
                 document.getElementById('canvas').style.display ='none';
                 document.getElementById('over').innerHTML += `<div id="game-over"> GAME OVER! <div>`;
