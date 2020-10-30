@@ -85,17 +85,21 @@ function checkPickedCards() {
                    card.drawCards(); 
                 });
                 currentGame.pickedCards = [];
-            }, 1000)   
+            }, 1000) 
+
+            if(currentGame.penalty() && clock > 4) {
+                clock -= 3;
+                document.getElementById('penalty').style.display ='block'; 
+                debugger;
+                setTimeout(() => {
+                    document.getElementById('penalty').style.display ='none'; 
+                    
+                }, 1000)
+            }   
         };
         document.getElementById('pairs-clicked').innerHTML = currentGame.pairsClicked;
         
-        if(currentGame.penalty() && clock > 4) {
-                clock -= 3;
-                document.getElementById('penalty').style.display ='block'; 
-                setTimeout(() => {
-                    document.getElementById('penalty').style.display ='none'; 
-                }, 1000)
-            }   
+        
     }
 
     //WIN Each LEVEL AND FINAL
